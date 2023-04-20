@@ -1,0 +1,273 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  color: white;
+}
+
+body {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  min-height: 650px;
+  background-color: var(--background-color);
+}
+
+main {
+  display: flex;
+  width: 100%;
+}
+
+:root {
+  --main-color: #FF00F2;
+  --main-color-half: #ff00f23f;
+  --background-color: #8656F8;
+  --background-color-darrk: #24055E;
+  --shadow-light: #9F71FF;
+  --shadow-dark: #683ACB;
+  --shadow-container: -12px -12px 20px var(--shadow-light),
+      20px 20px 20px var(--shadow-dark);
+  --shadow-input: inset -5px -5px 5px var(--shadow-light),
+      inset 5px 5px 5px var(--shadow-dark),
+      -0px -0px 0px var(--shadow-light),
+      0px 0px 0px var(--shadow-dark);
+  --shadow-input-hover:inset -0px -0px 0px var(--shadow-light),
+  inset 0px 0px 0px var(--shadow-dark),
+   -5px -5px 5px var(--shadow-light),
+      5px 5px 5px var(--shadow-dark);
+  --border--radius-main: 12px;
+}
+
+main .audiohub__btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  filter: brightness(0.8);
+  transition: filter 0.3s ease-out;
+  cursor: pointer;
+}
+main .audiohub__btn img {
+  width: 30px;
+}
+main .audiohub__btn:hover {
+  filter: brightness(1);
+}
+main section.deploy__section {
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  padding: 25px;
+  backdrop-filter: blur(8px);
+  z-index: 999;
+}
+main input {
+  border: none;
+  outline: none;
+}
+
+.audiohub__side__section__menu {
+  height: 100%;
+  padding: 20px;
+  box-shadow: 20px 0px 20px var(--shadow-dark);
+  z-index: 998;
+}
+.audiohub__side__section__menu .logo__container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 40px;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 800;
+}
+.audiohub__side__section__menu .logo__container img {
+  width: 35px;
+}
+.audiohub__side__section__menu .audiohub__menu {
+  width: 180px;
+  list-style: none;
+}
+.audiohub__side__section__menu .audiohub__menu li {
+  margin: 5px 0;
+  cursor: pointer;
+}
+.audiohub__side__section__menu #add__track {
+  margin-top: 30px;
+}
+
+.audiohub__section__music {
+  position: relative;
+  width: 100%;
+  padding: 30px;
+  background-image: -webkit-linear-gradient(right, var(--shadow-dark), transparent);
+}
+.audiohub__section__music .gradient__container {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  height: 400px;
+  background-image: -webkit-linear-gradient(top, rgba(255, 0, 242, 0.4431372549), transparent);
+}
+
+.audiohub__section__addtrack,
+.audiohub__section__addalbum {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+.audiohub__section__addtrack .audiohub__section__addtrack__container,
+.audiohub__section__addtrack .audiohub__section__addalbum__container,
+.audiohub__section__addalbum .audiohub__section__addtrack__container,
+.audiohub__section__addalbum .audiohub__section__addalbum__container {
+  max-width: 600px;
+  padding: 20px;
+  padding-right: 30px;
+  border-radius: var(--border--radius-main);
+  background-color: var(--background-color);
+  box-shadow: var(--shadow-container);
+}
+.audiohub__section__addtrack .audiohub__section__addtrack__container p,
+.audiohub__section__addtrack .audiohub__section__addalbum__container p,
+.audiohub__section__addalbum .audiohub__section__addtrack__container p,
+.audiohub__section__addalbum .audiohub__section__addalbum__container p {
+  max-width: 400px;
+  margin-left: 10px;
+  margin-bottom: 20px;
+}
+.audiohub__section__addtrack .audiohub__section__addtrack__container form#form__addtrack input,
+.audiohub__section__addtrack .audiohub__section__addtrack__container form#form__addalbum input,
+.audiohub__section__addtrack .audiohub__section__addalbum__container form#form__addtrack input,
+.audiohub__section__addtrack .audiohub__section__addalbum__container form#form__addalbum input,
+.audiohub__section__addalbum .audiohub__section__addtrack__container form#form__addtrack input,
+.audiohub__section__addalbum .audiohub__section__addtrack__container form#form__addalbum input,
+.audiohub__section__addalbum .audiohub__section__addalbum__container form#form__addtrack input,
+.audiohub__section__addalbum .audiohub__section__addalbum__container form#form__addalbum input {
+  margin: 8px 10px;
+  padding: 8px 20px;
+  border-radius: 8px;
+  background-color: var(--background-color);
+  box-shadow: var(--shadow-input);
+  color: white;
+}
+.audiohub__section__addtrack .audiohub__section__addtrack__container form#form__addtrack input[type=text],
+.audiohub__section__addtrack .audiohub__section__addtrack__container form#form__addalbum input[type=text],
+.audiohub__section__addtrack .audiohub__section__addalbum__container form#form__addtrack input[type=text],
+.audiohub__section__addtrack .audiohub__section__addalbum__container form#form__addalbum input[type=text],
+.audiohub__section__addalbum .audiohub__section__addtrack__container form#form__addtrack input[type=text],
+.audiohub__section__addalbum .audiohub__section__addtrack__container form#form__addalbum input[type=text],
+.audiohub__section__addalbum .audiohub__section__addalbum__container form#form__addtrack input[type=text],
+.audiohub__section__addalbum .audiohub__section__addalbum__container form#form__addalbum input[type=text] {
+  transition: box-shadow 0.3s ease;
+}
+.audiohub__section__addtrack .audiohub__section__addtrack__container form#form__addtrack input[type=text]:hover,
+.audiohub__section__addtrack .audiohub__section__addtrack__container form#form__addalbum input[type=text]:hover,
+.audiohub__section__addtrack .audiohub__section__addalbum__container form#form__addtrack input[type=text]:hover,
+.audiohub__section__addtrack .audiohub__section__addalbum__container form#form__addalbum input[type=text]:hover,
+.audiohub__section__addalbum .audiohub__section__addtrack__container form#form__addtrack input[type=text]:hover,
+.audiohub__section__addalbum .audiohub__section__addtrack__container form#form__addalbum input[type=text]:hover,
+.audiohub__section__addalbum .audiohub__section__addalbum__container form#form__addtrack input[type=text]:hover,
+.audiohub__section__addalbum .audiohub__section__addalbum__container form#form__addalbum input[type=text]:hover {
+  box-shadow: var(--shadow-input-hover);
+}
+.audiohub__section__addtrack .audiohub__section__addtrack__container form#form__addtrack input[type=file],
+.audiohub__section__addtrack .audiohub__section__addtrack__container form#form__addalbum input[type=file],
+.audiohub__section__addtrack .audiohub__section__addalbum__container form#form__addtrack input[type=file],
+.audiohub__section__addtrack .audiohub__section__addalbum__container form#form__addalbum input[type=file],
+.audiohub__section__addalbum .audiohub__section__addtrack__container form#form__addtrack input[type=file],
+.audiohub__section__addalbum .audiohub__section__addtrack__container form#form__addalbum input[type=file],
+.audiohub__section__addalbum .audiohub__section__addalbum__container form#form__addtrack input[type=file],
+.audiohub__section__addalbum .audiohub__section__addalbum__container form#form__addalbum input[type=file] {
+  width: 100%;
+  margin-left: 5px;
+  padding: 10px;
+  text-align: center;
+  line-height: normal;
+  box-shadow: none;
+}
+.audiohub__section__addtrack .audiohub__section__addtrack__container form#form__addtrack input[type=file]::-webkit-file-upload-button,
+.audiohub__section__addtrack .audiohub__section__addtrack__container form#form__addalbum input[type=file]::-webkit-file-upload-button,
+.audiohub__section__addtrack .audiohub__section__addalbum__container form#form__addtrack input[type=file]::-webkit-file-upload-button,
+.audiohub__section__addtrack .audiohub__section__addalbum__container form#form__addalbum input[type=file]::-webkit-file-upload-button,
+.audiohub__section__addalbum .audiohub__section__addtrack__container form#form__addtrack input[type=file]::-webkit-file-upload-button,
+.audiohub__section__addalbum .audiohub__section__addtrack__container form#form__addalbum input[type=file]::-webkit-file-upload-button,
+.audiohub__section__addalbum .audiohub__section__addalbum__container form#form__addtrack input[type=file]::-webkit-file-upload-button,
+.audiohub__section__addalbum .audiohub__section__addalbum__container form#form__addalbum input[type=file]::-webkit-file-upload-button {
+  display: block;
+  width: 100%;
+  height: 80px;
+  margin-bottom: 20px;
+  outline: none;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 18px;
+  background-color: var(--background-color);
+  box-shadow: var(--shadow-input-hover);
+  cursor: pointer;
+  position: relative;
+}
+.audiohub__section__addtrack .audiohub__section__addtrack__container form#form__addtrack #form__addtrack__btn__submit,
+.audiohub__section__addtrack .audiohub__section__addtrack__container form#form__addtrack #form__addalbum__btn__submit,
+.audiohub__section__addtrack .audiohub__section__addtrack__container form#form__addalbum #form__addtrack__btn__submit,
+.audiohub__section__addtrack .audiohub__section__addtrack__container form#form__addalbum #form__addalbum__btn__submit,
+.audiohub__section__addtrack .audiohub__section__addalbum__container form#form__addtrack #form__addtrack__btn__submit,
+.audiohub__section__addtrack .audiohub__section__addalbum__container form#form__addtrack #form__addalbum__btn__submit,
+.audiohub__section__addtrack .audiohub__section__addalbum__container form#form__addalbum #form__addtrack__btn__submit,
+.audiohub__section__addtrack .audiohub__section__addalbum__container form#form__addalbum #form__addalbum__btn__submit,
+.audiohub__section__addalbum .audiohub__section__addtrack__container form#form__addtrack #form__addtrack__btn__submit,
+.audiohub__section__addalbum .audiohub__section__addtrack__container form#form__addtrack #form__addalbum__btn__submit,
+.audiohub__section__addalbum .audiohub__section__addtrack__container form#form__addalbum #form__addtrack__btn__submit,
+.audiohub__section__addalbum .audiohub__section__addtrack__container form#form__addalbum #form__addalbum__btn__submit,
+.audiohub__section__addalbum .audiohub__section__addalbum__container form#form__addtrack #form__addtrack__btn__submit,
+.audiohub__section__addalbum .audiohub__section__addalbum__container form#form__addtrack #form__addalbum__btn__submit,
+.audiohub__section__addalbum .audiohub__section__addalbum__container form#form__addalbum #form__addtrack__btn__submit,
+.audiohub__section__addalbum .audiohub__section__addalbum__container form#form__addalbum #form__addalbum__btn__submit {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  outline: none;
+  border-radius: 100px;
+  background-color: var(--background-color);
+  box-shadow: var(--shadow-input-hover);
+  transition: background-color 0.5s ease;
+}
+.audiohub__section__addtrack .audiohub__section__addtrack__container form#form__addtrack #form__addtrack__btn__submit:hover,
+.audiohub__section__addtrack .audiohub__section__addtrack__container form#form__addtrack #form__addalbum__btn__submit:hover,
+.audiohub__section__addtrack .audiohub__section__addtrack__container form#form__addalbum #form__addtrack__btn__submit:hover,
+.audiohub__section__addtrack .audiohub__section__addtrack__container form#form__addalbum #form__addalbum__btn__submit:hover,
+.audiohub__section__addtrack .audiohub__section__addalbum__container form#form__addtrack #form__addtrack__btn__submit:hover,
+.audiohub__section__addtrack .audiohub__section__addalbum__container form#form__addtrack #form__addalbum__btn__submit:hover,
+.audiohub__section__addtrack .audiohub__section__addalbum__container form#form__addalbum #form__addtrack__btn__submit:hover,
+.audiohub__section__addtrack .audiohub__section__addalbum__container form#form__addalbum #form__addalbum__btn__submit:hover,
+.audiohub__section__addalbum .audiohub__section__addtrack__container form#form__addtrack #form__addtrack__btn__submit:hover,
+.audiohub__section__addalbum .audiohub__section__addtrack__container form#form__addtrack #form__addalbum__btn__submit:hover,
+.audiohub__section__addalbum .audiohub__section__addtrack__container form#form__addalbum #form__addtrack__btn__submit:hover,
+.audiohub__section__addalbum .audiohub__section__addtrack__container form#form__addalbum #form__addalbum__btn__submit:hover,
+.audiohub__section__addalbum .audiohub__section__addalbum__container form#form__addtrack #form__addtrack__btn__submit:hover,
+.audiohub__section__addalbum .audiohub__section__addalbum__container form#form__addtrack #form__addalbum__btn__submit:hover,
+.audiohub__section__addalbum .audiohub__section__addalbum__container form#form__addalbum #form__addtrack__btn__submit:hover,
+.audiohub__section__addalbum .audiohub__section__addalbum__container form#form__addalbum #form__addalbum__btn__submit:hover {
+  background-color: var(--main-color-half);
+}
+.audiohub__section__addtrack .audiohub__section__addtrack__container ::placeholder,
+.audiohub__section__addtrack .audiohub__section__addalbum__container ::placeholder,
+.audiohub__section__addalbum .audiohub__section__addtrack__container ::placeholder,
+.audiohub__section__addalbum .audiohub__section__addalbum__container ::placeholder {
+  color: rgba(255, 255, 255, 0.651);
+}
+
+/*# sourceMappingURL=styles.css.map */

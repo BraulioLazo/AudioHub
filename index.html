@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="favicon.ico" type="image/ico" sizes="32x32">
+  <title> AudioHub </title>
+  <link rel="stylesheet" href="Styles/styles.css">
+</head>
+
+<body>
+  <header>
+    <!-- Aquí puedes colocar la barra superior con el logo, la barra de búsqueda y los controles de usuario -->
+  </header>
+
+  <main>
+    <aside id="audiohub__side__section__menu" class="audiohub__side__section__menu">
+      <div class="logo__container">
+        <img src="Images/AudioHub__icono.webp" alt=""> AudioHub
+      </div>
+
+      <nav id="audiohub__navegation__menu" class="audiohub__navegation__menu">
+        <ul class="audiohub__menu">
+          <li> Home </li>
+          <li> Buscar </li>
+          <li> Biblioteca </li>
+        </ul>
+      </nav>
+
+      <button class="audiohub__btn" id="add__track">
+        <img src="Images/add-image.png" alt="">
+        Agregar Pista
+      </button> <br>
+
+      <button class="audiohub__btn" id="add__album">
+        <img src="Images/add-image.png" alt="">
+        Agregar Álbum
+      </button>
+
+    </aside>
+
+    <section id="audiohub__section__music" class="audiohub__section__music">
+      <div class="gradient__container"></div>
+
+
+      <div id="audiohub__tracks">
+        <!-- Lista de reproducción o sección de álbumes aquí -->
+      </div>
+
+
+    </section>
+
+    <section id="audiohub__section__addtrack" class="audiohub__section__addtrack">
+      <div class="audiohub__section__addtrack__container">
+        <form id="form__addtrack">
+          <p>Por favor, ingrese los siguientes datos para agregar una nueva pista de audio:</p>
+          <label for="input__track__name"></label>
+          <input type="text" id="input__track__name" placeholder="Titulo de Pista"> <br>
+
+          <label for="input__track__artist"></label>
+          <input type="text" id="input__track__artist" placeholder="Nombre de Artista"> <br>
+
+          <label for="input__add__track"></label>
+          <input type="file" id="input__add__track" accept="audio/mp3"> <br>
+
+          <button type="submit"  id="form__addtrack__btn__submit"> Guardar Pista</button>
+        </form>
+        
+      </div>
+
+    </section>
+
+    <section id="audiohub__section__addalbum" class="audiohub__section__addalbum">
+      <div class="audiohub__section__addalbum__container">
+        <form id="form__addalbum">
+          <p>Por favor, ingrese los siguientes datos para agregar un nuevo Álbum: </p>
+
+          <label for="input__album__name"></label>
+          <input type="text" id="input__album__name" placeholder="Titulo de Álbum"> <br>
+
+          <label for="input__album__artist"></label>
+          <input type="text" id="input__album__artist" placeholder="Nombre de Álbum"> <br>
+
+          <label for="input__add__album"></label>
+          <input type="file" id="input__add__album" accept="audio/mp3"> <br>
+
+          <button type="submit"  id="form__addalbum__btn__submit"> Guardar Álbum</button>
+        </form>
+        
+      </div>
+
+    </section>
+  </main>
+
+  <footer>
+    <!-- Aquí puedes colocar el reproductor de audio y sus controles -->
+  </footer>
+
+  <script src="JavaScript/deploy-elements.js"></script>
+  <script src="JavaScript/main.js"></script>
+</body>
+
+</html>
