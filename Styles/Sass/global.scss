@@ -18,3 +18,20 @@ main {
     display: flex;
     width: 100%;
 }
+
+.audiohub__btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    filter: brightness(0.8);
+    transition: filter 0.3s ease-out;
+    cursor: pointer;
+
+    img {
+        width: 30px;
+    }
+}

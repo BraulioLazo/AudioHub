@@ -20,6 +20,22 @@ main {
   width: 100%;
 }
 
+.audiohub__btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  filter: brightness(0.8);
+  transition: filter 0.3s ease-out;
+  cursor: pointer;
+}
+.audiohub__btn img {
+  width: 30px;
+}
+
 :root {
   --main-color: #FF00F2;
   --main-color-half: #ff00f23f;
@@ -33,9 +49,9 @@ main {
       inset 5px 5px 5px var(--shadow-dark),
       -0px -0px 0px var(--shadow-light),
       0px 0px 0px var(--shadow-dark);
-  --shadow-input-hover:inset -0px -0px 0px var(--shadow-light),
-  inset 0px 0px 0px var(--shadow-dark),
-   -5px -5px 5px var(--shadow-light),
+  --shadow-input-hover: inset -0px -0px 0px var(--shadow-light),
+      inset 0px 0px 0px var(--shadow-dark),
+      -5px -5px 5px var(--shadow-light),
       5px 5px 5px var(--shadow-dark);
   --border--radius-main: 12px;
 }
@@ -61,38 +77,17 @@ header .logo__container {
 header .logo__container img {
   width: 35px;
 }
-header .menu__icon__container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 40px;
-  height: 40px;
-  padding: 8px;
-  padding-left: 4px;
-  border-radius: 50%;
+header #header__addtrack__btn,
+header #header__add__album {
+  padding: 8px 20px;
+  border-radius: 100px;
+  font-size: 16px;
+  font-weight: 600;
   border: 3px solid var(--background-color);
   background-color: var(--background-color);
-  box-shadow: inset -2px -2px 2px var(--shadow-light), inset 2px 2px 2px var(--shadow-dark), -2px -2px 2px var(--shadow-light), 2px 2px 2px var(--shadow-dark);
-}
-header .menu__icon__container img {
-  width: 100%;
+  box-shadow: inset -2px -2px 4px var(--shadow-light), inset 2px 2px 4px var(--shadow-dark), -5px -5px 5px var(--shadow-light), 5px 5px 5px var(--shadow-dark);
 }
 
-main .audiohub__btn {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 18px;
-  border: none;
-  outline: none;
-  background-color: transparent;
-  filter: brightness(0.8);
-  transition: filter 0.3s ease-out;
-  cursor: pointer;
-}
-main .audiohub__btn img {
-  width: 30px;
-}
 main .audiohub__btn:hover {
   filter: brightness(1);
 }
@@ -316,13 +311,7 @@ main input {
     align-content: center;
   }
   .audiohub__side__section__menu {
-    position: fixed;
-    top: 0px;
-    right: 0px;
-    width: 0px;
-    height: 0px;
-    padding: 0px;
-    overflow: hidden;
+    display: none;
   }
 }
 
