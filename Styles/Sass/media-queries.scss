@@ -1,12 +1,45 @@
-@media screen and (max-width: 768px){
-    header{
+@media screen and (max-width: 768px) {
+    header {
         display: flex;
         justify-content: space-between;
         align-items: center;
         align-content: center;
     }
 
-    .audiohub__side__section__menu{
-       display: none;
+    .audiohub__side__section__menu {
+        position: fixed;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        align-content: center;
+        width: 100%;
+        height: fit-content;
+        padding-top: 60px;
+        box-shadow: none;
+        background-image: -webkit-linear-gradient(bottom, var(--main-color-half), transparent);
+
+        .menu__logo__container {
+            display: none;
+        }
+
+        #add__track {
+            margin-top: 0px;
+        }
+
+        button{
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 5px;
+            width: 120px;
+            font-size: 15px;
+        }
+
+        #library__btn,
+        #search__btn{
+            width: 60px;
+        }
     }
 }

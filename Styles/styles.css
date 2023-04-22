@@ -24,6 +24,7 @@ main {
   display: flex;
   align-items: center;
   gap: 10px;
+  width: fit-content;
   font-size: 18px;
   border: none;
   outline: none;
@@ -77,16 +78,6 @@ header .logo__container {
 header .logo__container img {
   width: 35px;
 }
-header #header__addtrack__btn,
-header #header__add__album {
-  padding: 8px 20px;
-  border-radius: 100px;
-  font-size: 16px;
-  font-weight: 600;
-  border: 3px solid var(--background-color);
-  background-color: var(--background-color);
-  box-shadow: inset -2px -2px 4px var(--shadow-light), inset 2px 2px 4px var(--shadow-dark), -5px -5px 5px var(--shadow-light), 5px 5px 5px var(--shadow-dark);
-}
 
 main .audiohub__btn:hover {
   filter: brightness(1);
@@ -125,16 +116,9 @@ main input {
 .audiohub__side__section__menu .logo__container img {
   width: 35px;
 }
-.audiohub__side__section__menu .audiohub__menu {
-  width: 180px;
-  list-style: none;
-}
-.audiohub__side__section__menu .audiohub__menu li {
-  margin: 5px 0;
-  cursor: pointer;
-}
-.audiohub__side__section__menu #add__track {
-  margin-top: 30px;
+.audiohub__side__section__menu button {
+  width: 200px;
+  margin: 10px 0;
 }
 
 .audiohub__section__music {
@@ -311,7 +295,36 @@ main input {
     align-content: center;
   }
   .audiohub__side__section__menu {
+    position: fixed;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    width: 100%;
+    height: fit-content;
+    padding-top: 60px;
+    box-shadow: none;
+    background-image: -webkit-linear-gradient(bottom, var(--main-color-half), transparent);
+  }
+  .audiohub__side__section__menu .menu__logo__container {
     display: none;
+  }
+  .audiohub__side__section__menu #add__track {
+    margin-top: 0px;
+  }
+  .audiohub__side__section__menu button {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    width: 120px;
+    font-size: 15px;
+  }
+  .audiohub__side__section__menu #library__btn,
+  .audiohub__side__section__menu #search__btn {
+    width: 60px;
   }
 }
 
