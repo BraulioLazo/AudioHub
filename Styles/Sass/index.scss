@@ -24,8 +24,6 @@ header {
 }
 
 main {
-   
-
     section.deploy__section {
         top: 0px;
         right: 0px;
@@ -65,7 +63,7 @@ main {
     }
 
   button{
-    width: 200px;
+    width: fit-content;
     margin: 10px 0;
   }
 }
@@ -118,9 +116,11 @@ main {
                 margin: 8px 10px;
                 padding: 8px 20px;
                 border-radius: 8px;
+                font-size: 18px;
                 background-color: var(--background-color);
                 box-shadow: var(--shadow-input);
                 color: white;
+                cursor: pointer;
             }
 
             input[type="text"] {
