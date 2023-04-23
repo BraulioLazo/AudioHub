@@ -1,4 +1,4 @@
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 900px) {
     header {
         display: flex;
         justify-content: space-between;
@@ -36,15 +36,11 @@
             gap: 5px;
             width: 25%;
             font-size: 12px;
-            span{
+
+            span {
                 width: 100%
             }
 
-        }
-
-        #library__btn,
-        #search__btn {
-            width: 60px;
         }
     }
 }

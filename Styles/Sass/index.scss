@@ -159,8 +159,9 @@ main {
 
             #form__addtrack__btn__submit,
             #form__addalbum__btn__submit {
-                width: 100%;
+                width: calc(100% - 10px);
                 padding: 12px;
+                margin-left: 10px;
                 border: none;
                 outline: none;
                 border-radius: 100px;
