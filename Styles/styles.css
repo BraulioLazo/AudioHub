@@ -167,7 +167,7 @@ main input {
   grid-auto-rows: 1fr;
   gap: 2%;
   width: 100%;
-  padding-bottom: 130px;
+  padding-bottom: 80px;
 }
 .audiohub__section__music .audiohub__section__music__container .tracks__container .track {
   padding: 5%;
@@ -396,12 +396,6 @@ main input {
   }
   .audiohub__side__section__menu button span {
     width: 100%;
-  }
-}
-@media screen and (max-width: 760px) {
-  .audiohub__section__music .audiohub__section__music__container .tracks__container {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
   }
 }
 
