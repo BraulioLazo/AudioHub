@@ -10,8 +10,7 @@
 body {
   display: flex;
   width: 100%;
-  height: 100vh;
-  min-height: 650px;
+  min-height: 100vh;
   background-color: var(--background-color);
 }
 
@@ -52,14 +51,30 @@ main {
   --shadow-dark: #683ACB;
   --shadow-container: -12px -12px 20px var(--shadow-light),
       20px 20px 20px var(--shadow-dark);
-  --shadow-input: inset -5px -5px 5px var(--shadow-light),
+  --shadow-container-both: inset -5px -5px 5px var(--shadow-light),
       inset 5px 5px 5px var(--shadow-dark),
-      -0px -0px 0px var(--shadow-light),
-      0px 0px 0px var(--shadow-dark);
+      -12px -12px 20px var(--shadow-light),
+      12px 12px 12px var(--shadow-dark);
+  --shadow-inside: inset -5px -5px 5px var(--shadow-light),
+                   inset 5px 5px 5px var(--shadow-dark),
+                         -0px -0px 0px var(--shadow-light),
+                          0px 0px 0px var(--shadow-dark);
+  --shadow-outside: inset -0px -0px 0px var(--shadow-light),
+                    inset 0px 0px 0px var(--shadow-dark),
+                          -5px -5px 5px var(--shadow-light),
+                           5px 5px 5px var(--shadow-dark);
+  --shadow-both: inset -5px -5px 5px var(--shadow-light),
+                 inset 5px 5px 5px var(--shadow-dark),
+                       -5px -5px 5px var(--shadow-light),
+                        5px 5px 5px var(--shadow-dark);
+  --shadow-input: inset -5px -5px 5px var(--shadow-light),
+                  inset 5px 5px 5px var(--shadow-dark),
+                        -0px -0px 0px var(--shadow-light),
+                         0px 0px 0px var(--shadow-dark);
   --shadow-input-hover: inset -0px -0px 0px var(--shadow-light),
-      inset 0px 0px 0px var(--shadow-dark),
-      -5px -5px 5px var(--shadow-light),
-      5px 5px 5px var(--shadow-dark);
+                        inset 0px 0px 0px var(--shadow-dark),
+                              -5px -5px 5px var(--shadow-light),
+                               5px 5px 5px var(--shadow-dark);
   --border--radius-main: 12px;
 }
 
@@ -146,22 +161,30 @@ main input {
 }
 .audiohub__section__music .audiohub__section__music__container .tracks__container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-auto-rows: 1fr;
-  gap: 20px;
+  gap: 25px;
 }
 .audiohub__section__music .audiohub__section__music__container .tracks__container .track {
   padding: 20px;
   border-radius: var(--border--radius-main);
-  background-color: var(--background-color);
-  box-shadow: var(--shadow-container);
+  background-image: -webkit-linear-gradient(bottom, var(--main-color-half), var(--background-color));
+  box-shadow: var(--shadow-inside);
 }
 .audiohub__section__music .audiohub__section__music__container .tracks__container .track .track__img__container {
+  border: 4px solid var(--background-color);
   border-radius: var(--border--radius-main);
+  box-shadow: var(--shadow-outside);
 }
 .audiohub__section__music .audiohub__section__music__container .tracks__container .track .track__img__container img {
   width: 100%;
+  margin-bottom: -3px;
   border-radius: var(--border--radius-main);
+}
+.audiohub__section__music .audiohub__section__music__container .tracks__container .track .track__description {
+  margin-top: 20px;
+  padding: 10px;
+  text-align: center;
 }
 
 .audiohub__section__addtrack,

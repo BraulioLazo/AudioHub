@@ -12,15 +12,34 @@
     --shadow-container: -12px -12px 20px var(--shadow-light),
         20px 20px 20px var(--shadow-dark);
 
-    --shadow-input: inset -5px -5px 5px var(--shadow-light),
+    --shadow-container-both: inset -5px -5px 5px var(--shadow-light),
         inset 5px 5px 5px var(--shadow-dark),
-        -0px -0px 0px var(--shadow-light),
-        0px 0px 0px var(--shadow-dark);
+        -12px -12px 20px var(--shadow-light),
+        12px 12px 12px var(--shadow-dark);
+
+    --shadow-inside: inset -5px -5px 5px var(--shadow-light),
+                     inset  5px 5px 5px var(--shadow-dark),
+                           -0px -0px 0px var(--shadow-light),
+                            0px 0px 0px var(--shadow-dark);
+    --shadow-outside: inset -0px -0px 0px var(--shadow-light),
+                      inset  0px 0px 0px var(--shadow-dark),
+                            -5px -5px 5px var(--shadow-light),
+                             5px 5px 5px var(--shadow-dark);                        
+
+    --shadow-both: inset -5px -5px 5px var(--shadow-light),
+                   inset  5px 5px 5px var(--shadow-dark),
+                         -5px -5px 5px var(--shadow-light),
+                          5px 5px 5px var(--shadow-dark);
+
+    --shadow-input: inset -5px -5px 5px var(--shadow-light),
+                    inset  5px 5px 5px var(--shadow-dark),
+                          -0px -0px 0px var(--shadow-light),
+                           0px 0px 0px var(--shadow-dark);
 
     --shadow-input-hover: inset -0px -0px 0px var(--shadow-light),
-        inset 0px 0px 0px var(--shadow-dark),
-        -5px -5px 5px var(--shadow-light),
-        5px 5px 5px var(--shadow-dark);
+                          inset  0px 0px 0px var(--shadow-dark),
+                                -5px -5px 5px var(--shadow-light),
+                                 5px 5px 5px var(--shadow-dark);
 
     --border--radius-main: 12px;
 }
