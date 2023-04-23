@@ -37,6 +37,10 @@ main {
   width: 30px;
 }
 
+.audiohub__btn:hover {
+  filter: brightness(1);
+}
+
 :root {
   --main-color: #FF00F2;
   --main-color-half: #ff00f23f;
@@ -79,9 +83,6 @@ header .logo__container img {
   width: 35px;
 }
 
-main .audiohub__btn:hover {
-  filter: brightness(1);
-}
 main section.deploy__section {
   top: 0px;
   right: 0px;
@@ -320,7 +321,10 @@ main input {
     flex-wrap: wrap;
     gap: 5px;
     width: 120px;
-    font-size: 15px;
+    font-size: 12px;
+  }
+  .audiohub__side__section__menu button span {
+    width: 100%;
   }
   .audiohub__side__section__menu #library__btn,
   .audiohub__side__section__menu #search__btn {

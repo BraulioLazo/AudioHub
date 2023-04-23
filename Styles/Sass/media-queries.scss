@@ -29,16 +29,20 @@
             margin-top: 0px;
         }
 
-        button{
+        button {
             justify-content: center;
             flex-wrap: wrap;
             gap: 5px;
             width: 120px;
-            font-size: 15px;
+            font-size: 12px;
+            span{
+                width: 100%
+            }
+
         }
 
         #library__btn,
-        #search__btn{
+        #search__btn {
             width: 60px;
         }
     }
