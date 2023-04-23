@@ -197,6 +197,9 @@ main input {
 .audiohub__section__music .audiohub__section__music__container .tracks__container .track .track__description h3, .audiohub__section__music .audiohub__section__music__container .tracks__container .track .track__description h4 {
   font-style: italic;
 }
+.audiohub__section__music .audiohub__section__music__container .tracks__container .track .track__description h3 {
+  font-size: 16px;
+}
 .audiohub__section__music .audiohub__section__music__container .tracks__container .track .track__description h4 {
   font-size: 15px;
 }
@@ -393,6 +396,12 @@ main input {
   }
   .audiohub__side__section__menu button span {
     width: 100%;
+  }
+}
+@media screen and (max-width: 760px) {
+  .audiohub__section__music .audiohub__section__music__container .tracks__container {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
   }
 }
 
