@@ -118,7 +118,7 @@ main input {
   width: 35px;
 }
 .audiohub__side__section__menu button {
-  width: fit-content;
+  width: 200px;
   margin: 10px 0;
 }
 
@@ -316,13 +316,14 @@ main input {
     display: none;
   }
   .audiohub__side__section__menu #add__track {
-    margin-top: 0;
+    margin-top: 0px;
     margin-bottom: 0;
   }
   .audiohub__side__section__menu button {
     justify-content: center;
     flex-wrap: wrap;
     gap: 5px;
+    width: 25%;
     font-size: 12px;
   }
   .audiohub__side__section__menu button span {
