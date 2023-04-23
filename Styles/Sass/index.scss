@@ -72,6 +72,7 @@ main {
     position: relative;
     width: 100%;
     padding: 30px;
+    padding-bottom: 50px;
     background-image: -webkit-linear-gradient(right, var(--shadow-dark), transparent);
 
     .gradient__container {
@@ -87,19 +88,25 @@ main {
     .audiohub__section__music__container {
         position: relative;
         padding-top: 70px;
+        padding-bottom: 50px;
         z-index: 2;
 
         .tracks__container {
+           
             display: grid;
+
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             grid-auto-rows: 1fr;
-            gap: 25px;
+            gap: 2%;
+            width: 100%;
+            padding-bottom: 130px;
 
             .track {
-                padding: 20px;
+                padding: 5%;
                 border-radius: var(--border--radius-main);
+                border: 4px solid var(--background-color);
                 background-image: -webkit-linear-gradient(bottom, var(--main-color-half), var(--background-color));
-                box-shadow: var(--shadow-inside);
+                box-shadow: var(--shadow-container-both);
 
                 .track__img__container {
                     border: 4px solid var(--background-color);
@@ -117,7 +124,17 @@ main {
                     margin-top: 20px;
                     padding: 10px;
                     text-align: center;
-                    
+                    border-radius: var(--border--radius-main);
+                    background-color: var(--background-color);
+                    box-shadow: var(--shadow-outside);
+
+                    h3,h4{
+                        font-style: italic;
+                    }
+
+                    h4{
+                        font-size: 15px;
+                    }
                 }
 
             }
