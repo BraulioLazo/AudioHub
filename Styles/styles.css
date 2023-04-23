@@ -325,7 +325,7 @@ main input {
     flex-wrap: wrap;
     gap: 5px;
     width: 25%;
-    font-size: 12px;
+    font-size: 10px;
   }
   .audiohub__side__section__menu button span {
     width: 100%;
