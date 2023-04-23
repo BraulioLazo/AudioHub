@@ -1,5 +1,7 @@
 function startAudioHub() {
 
+   databaseManager.initDatabase();
+
    document.querySelector("#add__track").onclick = () => {
       const sectionADDtrack = document.querySelector(".audiohub__section__addtrack");
       deploySection(sectionADDtrack);

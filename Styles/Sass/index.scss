@@ -62,17 +62,17 @@ main {
         }
     }
 
-  button{
-    width: 200px;
-    margin: 10px 0;
-  }
+    button {
+        width: 200px;
+        margin: 10px 0;
+    }
 }
 
 .audiohub__section__music {
     position: relative;
     width: 100%;
     padding: 30px;
-    background-image: -webkit-linear-gradient(right, var(--shadow-dark), transparent, );
+    background-image: -webkit-linear-gradient(right, var(--shadow-dark), transparent);
 
     .gradient__container {
         position: absolute;
@@ -80,8 +80,42 @@ main {
         right: 0px;
         left: 0px;
         height: 400px;
-        background-image: -webkit-linear-gradient(top, #ff00f271, transparent, );
+        background-image: -webkit-linear-gradient(top, #ff00f271, transparent);
+        z-index: 1;
     }
+
+    .audiohub__section__music__container {
+        position: relative;
+        padding-top: 70px;
+        z-index: 2;
+
+        .tracks__container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-auto-rows: 1fr;
+            gap: 20px;
+
+            .track {
+                padding: 20px;
+                border-radius: var(--border--radius-main);
+                background-color: var(--background-color);
+                box-shadow: var(--shadow-container);
+
+                .track__img__container {
+                    border-radius: var(--border--radius-main);
+
+                    img {
+                        width: 100%;
+                        border-radius: var(--border--radius-main);
+                    }
+                }
+
+            }
+        }
+
+
+    }
+
 }
 
 .audiohub__section__addtrack,
