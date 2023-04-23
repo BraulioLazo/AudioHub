@@ -314,7 +314,8 @@ main input {
     display: none;
   }
   .audiohub__side__section__menu #add__track {
-    margin-top: 0px;
+    margin-top: 0;
+    margin-bottom: 0;
   }
   .audiohub__side__section__menu button {
     justify-content: center;
