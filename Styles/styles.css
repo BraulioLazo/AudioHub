@@ -146,7 +146,7 @@ main input {
 }
 .audiohub__section__music .audiohub__section__music__container .tracks__container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-auto-rows: 1fr;
   gap: 20px;
 }
