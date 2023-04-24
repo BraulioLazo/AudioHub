@@ -14,6 +14,11 @@ body {
   background-color: var(--background-color);
 }
 
+body.no-scroll {
+  overflow: hidden;
+  height: 100%;
+}
+
 main {
   display: flex;
   width: 100%;
@@ -194,7 +199,8 @@ main input {
   background-color: var(--background-color);
   box-shadow: var(--shadow-outside);
 }
-.audiohub__section__music .audiohub__section__music__container .tracks__container .track .track__description h3, .audiohub__section__music .audiohub__section__music__container .tracks__container .track .track__description h4 {
+.audiohub__section__music .audiohub__section__music__container .tracks__container .track .track__description h3,
+.audiohub__section__music .audiohub__section__music__container .tracks__container .track .track__description h4 {
   font-style: italic;
 }
 .audiohub__section__music .audiohub__section__music__container .tracks__container .track .track__description h3 {
@@ -356,6 +362,44 @@ main input {
 .audiohub__section__addalbum .audiohub__section__addtrack__container ::placeholder,
 .audiohub__section__addalbum .audiohub__section__addalbum__container ::placeholder {
   color: rgba(255, 255, 255, 0.651);
+}
+
+.audiohub__section__audioplayer {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+.audiohub__section__audioplayer .audiohub__section__audioplayer__container .audiohub__audioplayer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 600px;
+}
+.audiohub__section__audioplayer .audiohub__section__audioplayer__container .audiohub__audioplayer .audioplayer__img__container {
+  width: 100%;
+  border-radius: 50%;
+  border: 10px solid var(--background-color);
+  box-shadow: var(--shadow-container);
+}
+.audiohub__section__audioplayer .audiohub__section__audioplayer__container .audiohub__audioplayer .audioplayer__img__container img {
+  width: 100%;
+  border-radius: 50%;
+}
+.audiohub__section__audioplayer .audiohub__section__audioplayer__container .audiohub__audioplayer .audioplayer__container__description {
+  width: 100%;
+  text-align: center;
+  font-style: italic;
+}
+.audiohub__section__audioplayer .audiohub__section__audioplayer__container .audiohub__audioplayer .audioplayer__container__description h3 {
+  font-size: 18px;
+}
+.audiohub__section__audioplayer .audiohub__section__audioplayer__container .audiohub__audioplayer .audioplayer__container__description h4 {
+  font-size: 14px;
 }
 
 @media screen and (max-width: 900px) {

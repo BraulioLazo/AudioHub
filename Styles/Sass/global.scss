@@ -6,12 +6,18 @@
     color: white;
 }
 
-body{
+body {
     display: flex;
     width: 100%;
     min-height: 100vh;
     background-color: var(--background-color);
 }
+
+body.no-scroll {
+    overflow: hidden;
+    height: 100%;
+}
+
 
 main {
     display: flex;

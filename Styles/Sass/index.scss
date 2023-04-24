@@ -92,7 +92,7 @@ main {
         z-index: 2;
 
         .tracks__container {
-           
+
             display: grid;
 
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -120,7 +120,7 @@ main {
                     }
                 }
 
-                .track__description{
+                .track__description {
                     margin-top: 20px;
                     padding: 10px;
                     text-align: center;
@@ -128,14 +128,16 @@ main {
                     background-color: var(--background-color);
                     box-shadow: var(--shadow-outside);
 
-                    h3,h4{
+                    h3,
+                    h4 {
                         font-style: italic;
                     }
 
-                    h3{
+                    h3 {
                         font-size: 16px;
                     }
-                    h4{
+
+                    h4 {
                         font-size: 15px;
                     }
                 }
@@ -243,5 +245,52 @@ main {
         ::placeholder {
             color: rgba(255, 255, 255, 0.651);
         }
+    }
+}
+
+.audiohub__section__audioplayer {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+
+    .audiohub__section__audioplayer__container {
+
+        .audiohub__audioplayer {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            max-width: 600px;
+
+            .audioplayer__img__container {
+                width: 100%;
+                border-radius: 50%;
+                border: 10px solid var(--background-color);
+                box-shadow: var(--shadow-container);
+                img {
+                    width: 100%;
+                    border-radius: 50%;
+                }
+            }
+
+            .audioplayer__container__description{
+                width: 100%;
+                text-align: center;
+                font-style: italic;
+
+                h3{
+                    font-size: 18px;
+                }
+
+                h4{
+                    font-size: 14px;
+                }
+            }
+        }
+
     }
 }
