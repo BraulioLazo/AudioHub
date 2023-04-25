@@ -91,24 +91,24 @@ const databaseManager = {
 
     printTracks: () => {
         databaseManager.tracksContainer.innerHTML = "";
-    
+
         const transaction = databaseManager.DB.transaction([databaseManager.trackStorageName]);
         const storage = transaction.objectStore(databaseManager.trackStorageName);
-    
+
         const pointer = storage.openCursor();
-    
+
         pointer.addEventListener("success", (event) => {
             const pointer = event.target.result;
             if (pointer) {
                 const trackKey = pointer.key;
-    
+
                 const trackDiv = document.createElement("div");
                 trackDiv.classList.add("track");
-    
+
                 trackDiv.addEventListener("click", () => {
                     databaseManager.playTrack(trackKey);
                 });
-    
+
                 trackDiv.innerHTML =
                     '<div class="track__img__container">' +
                     '<img name="trackIMG" src="assets/music/pista-images/audio__image__one.jpg" alt="">' +
@@ -122,12 +122,12 @@ const databaseManager = {
                     '</h4>' +
                     '</div>';
                 databaseManager.tracksContainer.appendChild(trackDiv);
-    
+
                 pointer.continue();
             }
         });
     },
-    
+
 
     playTrack: (trackKey) => {
         const section = document.querySelector("#audiohub__section__audioplayer");
@@ -141,23 +141,25 @@ const databaseManager = {
         request.onsuccess = function (event) {
             const result = event.target.result;
 
-            const audioPlayer = document.querySelector(".audiohub__audioplayer");
-            audioPlayer.innerHTML =
-                '<div class="audioplayer__img__container">' +
-                '<img src="assets/music/pista-images/audio__image__one.jpg" alt="">' +
-                '</div>' +
+            const audioData = new Blob([result.audio], { type: 'audio/mpeg' });
+            const audioURL = URL.createObjectURL(audioData);
+            const audioPlayer = document.querySelector("#audioPlayer");
+            audioPlayer.setAttribute("src", audioURL);
 
-                '<div class="audioplayer__container__description">' +
-                '<h3>' +
-                result.trackName +
-                '</h3>' +
-                '<h4>' +
-                result.artistName +
-                '</h4>' +
-                '</div>';
+            audioPlayer.addEventListener("error", (event) => {
+                console.error("Error al cargar o reproducir el archivo de audio:", event);
+                console.error("Código de error:", audioPlayer.error.code);
+              });
+
+            const trackNameContainer = document.querySelector("#h3__track__name");
+            trackNameContainer.innerHTML = result.trackName;
+
+            const artistNameContainer = document.querySelector("#h4__artist__name");
+            artistNameContainer.innerHTML = result.artistName;
+
         };
-
-    }
+    },
+    
 }
 
 

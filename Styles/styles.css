@@ -53,7 +53,7 @@ main {
   --background-color-dark: #24055E;
   --background-color-dark-three-quater: #24055ece;
   --shadow-light: #9F71FF;
-  --shadow-dark: #683ACB;
+  --shadow-dark: #4e299e;
   --shadow-container: -12px -12px 20px var(--shadow-light),
       20px 20px 20px var(--shadow-dark);
   --shadow-container-both: inset -5px -5px 5px var(--shadow-light),
@@ -113,7 +113,7 @@ main section.deploy__section {
   width: 100%;
   height: 100%;
   padding: 25px;
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(12px);
   z-index: 999;
 }
 main input {
@@ -400,6 +400,67 @@ main input {
 }
 .audiohub__section__audioplayer .audiohub__section__audioplayer__container .audiohub__audioplayer .audioplayer__container__description h4 {
   font-size: 14px;
+}
+.audiohub__section__audioplayer .audiohub__section__audioplayer__container .audiohub__audioplayer #track__progressbar__container {
+  width: 90%;
+}
+.audiohub__section__audioplayer .audiohub__section__audioplayer__container .audiohub__audioplayer #track__progressbar__container .duration__container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-bottom: 20px;
+  font-size: 18px;
+}
+.audiohub__section__audioplayer .audiohub__section__audioplayer__container .audiohub__audioplayer #track__progressbar__container .duration__progressbar {
+  width: 100%;
+  height: 20px;
+  padding: 4px;
+  border-radius: 20px;
+  background-color: var(--background-color);
+  box-shadow: var(--shadow-both);
+}
+.audiohub__section__audioplayer .audiohub__section__audioplayer__container .audiohub__audioplayer #track__progressbar__container .duration__progressbar .progress {
+  width: 20%;
+  height: 100%;
+  border-radius: 20px;
+  background-color: var(--main-color);
+}
+.audiohub__section__audioplayer .audiohub__section__audioplayer__container .audiohub__audioplayer #audioplayer__buttons__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+.audiohub__section__audioplayer .audiohub__section__audioplayer__container .audiohub__audioplayer #audioplayer__buttons__container .btn__audioPlayer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  padding: 10px;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  background-color: var(--background-color);
+  border: 3px solid var(--background-color);
+  box-shadow: var(--shadow-both);
+}
+.audiohub__section__audioplayer .audiohub__section__audioplayer__container .audiohub__audioplayer #audioplayer__buttons__container .btn__audioPlayer img {
+  width: 80%;
+}
+.audiohub__section__audioplayer .audiohub__section__audioplayer__container .audiohub__audioplayer #audioplayer__buttons__container #btn__previous__track,
+.audiohub__section__audioplayer .audiohub__section__audioplayer__container .audiohub__audioplayer #audioplayer__buttons__container #btn__next__track {
+  width: 40px;
+  height: 40px;
+}
+.audiohub__section__audioplayer .audiohub__section__audioplayer__container .audiohub__audioplayer #audioplayer__buttons__container #btn__previous__track img,
+.audiohub__section__audioplayer .audiohub__section__audioplayer__container .audiohub__audioplayer #audioplayer__buttons__container #btn__next__track img {
+  width: 100%;
+}
+.audiohub__section__audioplayer .audiohub__section__audioplayer__container .audiohub__audioplayer #audioplayer__buttons__container #btn__stop,
+.audiohub__section__audioplayer .audiohub__section__audioplayer__container .audiohub__audioplayer #audioplayer__buttons__container #btn__pause {
+  width: 50px;
+  height: 50px;
 }
 
 @media screen and (max-width: 900px) {

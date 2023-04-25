@@ -143,18 +143,49 @@
       <div class="audiohub__section__audioplayer__container">
 
         <div class="audiohub__audioplayer">
-          
+
           <div class="audioplayer__img__container">
             <img src="assets/music/pista-images/audio__image__one.jpg" alt="">
           </div>
 
+          <audio id="audioPlayer"></audio>
+
           <div class="audioplayer__container__description">
-            <h3>
+            <h3 id="h3__track__name">
               Nombre Pista
             </h3>
-            <h4>
+            <h4 id="h4__artist__name">
               Nombre Artista
             </h4>
+          </div>
+
+          <div id="track__progressbar__container">
+            <div class="duration__container">
+              <p id="currentTime">0:00</p>
+              <p id="totalDuration">0:00</p>
+            </div>
+
+            <div class="duration__progressbar">
+              <div class="progress"></div>
+            </div>
+          </div>
+
+          <div id="audioplayer__buttons__container">
+            <button id="btn__previous__track" class="btn__audioPlayer">
+              <img src="Images/previous__image.png" alt="Anterior">
+            </button>
+            <button id="btn__pause" class="btn__audioPlayer">
+              <img src="Images/pause__image.png" alt="Pausar">
+            </button>
+            <button id="btn__play" class="btn__audioPlayer">
+              <img src="Images/play__image.png" alt="Play">
+            </button>
+            <button id="btn__stop" class="btn__audioPlayer">
+              <img src="Images/stop__image.png" alt="Stop">
+            </button>
+            <button id="btn__next__track" class="btn__audioPlayer">
+              <img src="Images/next__image.png" alt="Siguiente">
+            </button>
           </div>
 
         </div>
@@ -169,6 +200,7 @@
 
   <script src="JavaScript/deploy-elements.js"></script>
   <script src="JavaScript/tracksDB.js"></script>
+  <script src="JavaScript/audioPlayer.js"></script>
   <script src="JavaScript/main.js"></script>
 </body>
 
