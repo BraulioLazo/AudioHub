@@ -31,6 +31,14 @@ const audioPlayerManager = {
         audioPlayerManager.totalDurationDisplay.textContent = `${totalMinutes}:${totalSeconds < 10 ? "0" + totalSeconds : totalSeconds}`;
     },
 
+    onTimeUpdate: () => {
+        const currentTime = audioPlayerManager.audioPlayer.currentTime;
+        const currentMinuts = Math.floor(currentTime / 60);
+        const currentSeconds = Math.floor(currentTime % 60);
+
+        audioPlayerManager.currentTimeDisplay.textContent = `${currentMinuts}:${currentSeconds < 10 ? "0" + currentSeconds : currentSeconds}`;
+    },
+
     init: () => {
         audioPlayerManager.playButton.addEventListener("click", () => {
             audioPlayerManager.play();
@@ -45,6 +53,7 @@ const audioPlayerManager = {
         });
 
         audioPlayerManager.audioPlayer.addEventListener("loadedmetadata", audioPlayerManager.onMetadataLoaded);
+        audioPlayerManager.audioPlayer.addEventListener("timeupdate", audioPlayerManager.onTimeUpdate);
     }
 };
 
