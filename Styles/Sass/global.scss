@@ -7,7 +7,9 @@
 }
 
 body {
+    position: relative;
     display: flex;
+    flex-wrap: wrap;
     width: 100%;
     min-height: 100vh;
     background-color: var(--background-color);

@@ -2,19 +2,7 @@ const databaseManager = {
     DBname: "tracksDB",
     trackStorageName: "audioTracks",
     DB: null,
-    key: 0,
     tracksContainer: null,
-
-    generateKey: () => {
-        if (localStorage.getItem("trackKey")) {
-            databaseManager.key = parseInt(localStorage.getItem("trackKey"));
-            databaseManager.key = databaseManager.key + 1;
-            localStorage.setItem("trackKey", databaseManager.key);
-        } else {
-            localStorage.setItem("trackKey", "0");
-            databaseManager.key = parseInt(localStorage.getItem("trackKey"));
-        }
-    },
 
     initDatabase: () => {
         databaseManager.tracksContainer = document.querySelector(".tracks__container");
@@ -54,12 +42,11 @@ const databaseManager = {
 
     createStorage: (event) => {
         const dataBase = event.target.result;
-        const storage = dataBase.createObjectStore(databaseManager.trackStorageName, { keyPath: 'key' });
+        const storage = dataBase.createObjectStore(databaseManager.trackStorageName, { keyPath: 'key', autoIncrement: true });
         storage.createIndex("lookForTrack", "trackName", { unique: false });
     },
 
     addTrack: () => {
-        databaseManager.generateKey();
         const trackName = document.querySelector("#input__track__name").value;
         const artistName = document.querySelector("#input__track__artist").value;
         const track = document.querySelector("#input__add__track").files[0];
@@ -75,7 +62,6 @@ const databaseManager = {
             transaction.addEventListener("complete", databaseManager.printTracks);
 
             const request = storage.add({
-                key: databaseManager.key,
                 trackName: trackName,
                 artistName: artistName,
                 audio: audioData
@@ -87,6 +73,10 @@ const databaseManager = {
                 console.log("Key del objeto insertado:", insertedKey);
             };
         };
+
+        document.querySelector("#input__track__name").value = "";
+        document.querySelector("#input__track__artist").value = "";
+        document.querySelector("#input__add__track").value = "";
     },
 
     printTracks: () => {
@@ -106,6 +96,8 @@ const databaseManager = {
                 trackDiv.classList.add("track");
 
                 trackDiv.addEventListener("click", () => {
+                    const section = document.querySelector("#audiohub__section__audioplayer");
+                    deploySection(section);
                     databaseManager.playTrack(trackKey);
                 });
 
@@ -129,11 +121,7 @@ const databaseManager = {
     },
 
 
-    playTrack: (trackKey) => {
-        const section = document.querySelector("#audiohub__section__audioplayer");
-        deploySection(section);
-        console.log(trackKey);
-
+    playTrack: (trackKey, callback) => {
         const transaction = databaseManager.DB.transaction([databaseManager.trackStorageName]);
         const storage = transaction.objectStore(databaseManager.trackStorageName);
         const request = storage.get(trackKey);
@@ -149,7 +137,7 @@ const databaseManager = {
             audioPlayer.addEventListener("error", (event) => {
                 console.error("Error al cargar o reproducir el archivo de audio:", event);
                 console.error("Código de error:", audioPlayer.error.code);
-              });
+            });
 
             const trackNameContainer = document.querySelector("#h3__track__name");
             trackNameContainer.innerHTML = result.trackName;
@@ -157,9 +145,15 @@ const databaseManager = {
             const artistNameContainer = document.querySelector("#h4__artist__name");
             artistNameContainer.innerHTML = result.artistName;
 
+            // Ejecutar el callback si se proporciona uno
+            if (callback) {
+                callback();
+            }
         };
-    },
-    
+        audioPlayerManager.currentTrackKey = trackKey;
+    }
+
+
 }
 
 
