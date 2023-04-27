@@ -509,26 +509,57 @@ main input {
   overflow: hidden;
   background-image: -webkit-linear-gradient(left, var(--background-color), var(--background-color-dark-three-quater));
 }
-.audiohub__section__configuration .option__description {
+.audiohub__section__configuration .audiohub__section__configuration__container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.audiohub__section__configuration .audiohub__section__configuration__container .configuration__option {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  width: 100%;
+}
+.audiohub__section__configuration .audiohub__section__configuration__container .configuration__option .configuration__option__info p.option__description {
   width: 80%;
   padding-top: 7px;
   font-size: 12px;
   color: var(--letter-dark-color);
 }
-.audiohub__section__configuration .audiohub__section__configuration__container .reset__database__container {
-  display: flex;
-  justify-content: space-between;
-  align-content: center;
-  align-items: center;
-}
-.audiohub__section__configuration .audiohub__section__configuration__container .reset__database__container .reset__btn__container .buttonWidthProgress {
-  padding: 5px 12px;
+.audiohub__section__configuration .audiohub__section__configuration__container .configuration__option .configuration__option__buttons__container .configuration__button {
   border-radius: 50px;
   font-size: 14px;
   border: none;
   outline: none;
   background-color: var(--background-color);
   box-shadow: var(--shadow-both);
+}
+.audiohub__section__configuration .audiohub__section__configuration__container .configuration__option .configuration__option__buttons__container .button__switch {
+  width: 40px;
+  height: 15px;
+}
+.audiohub__section__configuration .audiohub__section__configuration__container .configuration__option .configuration__option__buttons__container .button__switch .switch {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 0;
+  height: 100%;
+  border: 1px solid red;
+  transition: width 0.3s ease;
+}
+.audiohub__section__configuration .audiohub__section__configuration__container .configuration__option .configuration__option__buttons__container .button__switch .switch .switch__thumb {
+  position: absolute;
+  right: -12px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: var(--background-color);
+}
+.audiohub__section__configuration .audiohub__section__configuration__container .configuration__option .configuration__option__buttons__container button#reset__database__btn {
+  width: fit-content;
+  height: fit-content;
+  padding: 5px 12px;
 }
 
 .custom__confirm {

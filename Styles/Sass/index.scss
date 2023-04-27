@@ -419,31 +419,68 @@ main {
     overflow: hidden;
     background-image: -webkit-linear-gradient(left, var(--background-color), var(--background-color-dark-three-quater));
 
-    .option__description {
-        width: 80%;
-        padding-top: 7px;
-        font-size: 12px;
-        color: var(--letter-dark-color);
-    }
-
     .audiohub__section__configuration__container {
-        .reset__database__container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+
+        .configuration__option {
             display: flex;
             justify-content: space-between;
             align-content: center;
             align-items: center;
+            width: 100%;
 
-            .reset__database__text {}
+            .configuration__option__info {
+                p.option__description {
+                    width: 80%;
+                    padding-top: 7px;
+                    font-size: 12px;
+                    color: var(--letter-dark-color);
+                }
+            }
 
-            .reset__btn__container {
-                .buttonWidthProgress {
-                    padding: 5px 12px;
+            .configuration__option__buttons__container {
+
+
+                .configuration__button {
+
                     border-radius: 50px;
                     font-size: 14px;
                     border: none;
                     outline: none;
                     background-color: var(--background-color);
                     box-shadow: var(--shadow-both);
+                }
+
+                .button__switch {
+                    width: 40px;
+                    height: 15px;
+
+                    .switch {
+                        position: relative;
+                        display: flex;
+                        align-items: center;
+                        width: 0;
+                        height: 100%;
+                        border: 1px solid red;
+                        transition: width .3s ease;
+
+                        .switch__thumb {
+                            position: absolute;
+                            right: -12px;
+                            width: 25px;
+                            height: 25px;
+                            border-radius: 50%;
+                            background-color: var(--background-color);
+                        }
+                    }
+                }
+
+                button#reset__database__btn {
+                    width: fit-content;
+                    height: fit-content;
+                    padding: 5px 12px;
                 }
             }
         }
@@ -481,13 +518,13 @@ main {
         }
 
 
-        .custom__confirm__buttons{
+        .custom__confirm__buttons {
             display: flex;
             justify-content: center;
             gap: 40px;
             width: 80%;
 
-            button{
+            button {
                 border: none;
                 outline: none;
                 width: 80px;
@@ -498,7 +535,7 @@ main {
                 cursor: pointer;
             }
 
-            #confirm__no{
+            #confirm__no {
                 background-image: -webkit-linear-gradient(left, var(--main-color-three-quater), transparent);
             }
         }
