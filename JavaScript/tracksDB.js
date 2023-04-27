@@ -152,6 +152,8 @@ const databaseManager = {
             if (callback) {
                 callback();
             }
+
+            audioPlayerManager.play();
         };
         audioPlayerManager.currentTrackKey = trackKey;
     },
