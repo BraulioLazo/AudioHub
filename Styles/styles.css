@@ -48,6 +48,7 @@ main {
 }
 
 :root {
+  --letter-dark-color: rgb(223, 223, 223);
   --main-color: #FF00F2;
   --main-color-three-quater: #ff00f2a9;
   --main-color-half: #ff00f23f;
@@ -115,7 +116,29 @@ header .tools__icon__container {
   box-shadow: var(--shadow-both);
 }
 header .tools__icon__container img {
+  width: 90%;
+  filter: brightness(0.8);
+}
+
+.configuration__container {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  left: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
+  padding: 20px;
+  background-image: -webkit-linear-gradient(right, var(--main-color-three-quater), transparent);
+}
+.configuration__container #close__configuration {
+  position: absolute;
+  left: 20px;
+  filter: brightness(1);
+}
+.configuration__container #close__configuration img {
+  width: 20px;
 }
 
 main section.deploy__section {
@@ -175,14 +198,13 @@ main input {
 .audiohub__section__music .audiohub__section__music__container {
   position: relative;
   padding-top: 70px;
-  padding-bottom: 50px;
+  padding-bottom: 20px;
   z-index: 2;
 }
 .audiohub__section__music .audiohub__section__music__container .tracks__container {
   display: grid;
+  gap: 20px;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  grid-auto-rows: 1fr;
-  gap: 2%;
   width: 100%;
   padding-bottom: 80px;
 }
@@ -476,6 +498,36 @@ main input {
   height: 50px;
 }
 
+.audiohub__section__configuration {
+  position: relative;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  background-image: -webkit-linear-gradient(left, var(--background-color), var(--background-color-dark-three-quater));
+}
+.audiohub__section__configuration .option__description {
+  width: 60%;
+  padding-top: 7px;
+  font-size: 12px;
+  color: var(--letter-dark-color);
+}
+.audiohub__section__configuration .audiohub__section__configuration__container .reset__database__container {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+}
+.audiohub__section__configuration .audiohub__section__configuration__container .reset__database__container .reset__btn__container #reset__btn {
+  width: 40px;
+  height: 10px;
+  border-radius: 12px;
+  background-color: var(--background-color);
+  box-shadow: var(--shadow-both);
+}
 @media screen and (max-width: 900px) {
   header {
     position: absolute;
