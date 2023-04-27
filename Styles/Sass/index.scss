@@ -449,3 +449,58 @@ main {
         }
     }
 }
+
+
+.custom__confirm {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(12px);
+    z-index: 1000;
+    display: none;
+
+    .custom__confirm__content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 15px;
+        max-width: 350px;
+        padding: 20px;
+        border-radius: var(--border--radius-main);
+        background-color: var(--background-color);
+        box-shadow: var(--shadow-container-both);
+
+        p {
+            text-align: center;
+        }
+
+
+        .custom__confirm__buttons{
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            width: 80%;
+
+            button{
+                border: none;
+                outline: none;
+                width: 80px;
+                height: 30px;
+                border-radius: 50px;
+                background-color: var(--background-color);
+                box-shadow: var(--shadow-outside);
+                cursor: pointer;
+            }
+
+            #confirm__no{
+                background-image: -webkit-linear-gradient(left, var(--main-color-three-quater), transparent);
+            }
+        }
+    }
+}

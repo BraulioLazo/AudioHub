@@ -14,6 +14,9 @@ const databaseManager = {
             deploySection(sectionADDtrack);
         });
 
+        const buttonResetDatabase = document.querySelector("#reset__database__btn");
+        buttonResetDatabase.addEventListener("click", databaseManager.resetDatabase);
+
         const request = indexedDB.open(databaseManager.DBname);
 
         request.addEventListener("error", databaseManager.showError);
@@ -151,6 +154,34 @@ const databaseManager = {
             }
         };
         audioPlayerManager.currentTrackKey = trackKey;
+    },
+
+    resetDatabase: () => {
+        const customConfirm = document.querySelector("#custom__confirm");
+        customConfirm.style.display = "flex";
+
+        const confirmYes = document.querySelector("#confirm__yes");
+        const confirmNo = document.querySelector("#confirm__no");
+
+        confirmYes.onclick = () => {
+            databaseManager.DB.close();
+            const request = indexedDB.deleteDatabase(databaseManager.DBname);
+
+            request.onsuccess = () => {
+                console.log("Base de datos eliminada correctamente");
+            };
+
+            request.onerror = (event) => {
+                console.error(`La base de datos no se pudo eliminar: ${event}`);
+            };
+
+            customConfirm.style.display = "none";
+
+        };
+
+        confirmNo.onclick = () => {
+            customConfirm.style.display = "none";
+        };
     }
 
 
