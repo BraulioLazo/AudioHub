@@ -521,13 +521,16 @@ main input {
   align-content: center;
   align-items: center;
 }
-.audiohub__section__configuration .audiohub__section__configuration__container .reset__database__container .reset__btn__container #reset__btn {
-  width: 40px;
-  height: 10px;
-  border-radius: 12px;
+.audiohub__section__configuration .audiohub__section__configuration__container .reset__database__container .reset__btn__container .buttonWidthProgress {
+  padding: 5px 12px;
+  border-radius: 50px;
+  font-size: 14px;
+  border: none;
+  outline: none;
   background-color: var(--background-color);
   box-shadow: var(--shadow-both);
 }
+
 @media screen and (max-width: 900px) {
   header {
     position: absolute;

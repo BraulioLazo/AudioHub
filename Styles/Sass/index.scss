@@ -436,18 +436,16 @@ main {
             .reset__database__text {}
 
             .reset__btn__container {
-                #reset__btn {
-                    width: 40px;
-                    height: 10px;
-                    border-radius: 12px;
+                .buttonWidthProgress {
+                    padding: 5px 12px;
+                    border-radius: 50px;
+                    font-size: 14px;
+                    border: none;
+                    outline: none;
                     background-color: var(--background-color);
                     box-shadow: var(--shadow-both);
-
-                    #reset__btn__progress {}
                 }
             }
         }
-
-
     }
 }
