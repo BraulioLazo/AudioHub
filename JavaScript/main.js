@@ -21,6 +21,18 @@ function startAudioHub() {
       const sectionConfiguration = document.querySelector(".audiohub__section__configuration");
       deploySection(sectionConfiguration);
    };
+
+   const fullScreenBTN = document.querySelector("#full__screen__btn");
+   fullScreenBTN.addEventListener("click", () => {
+
+      if (fullScreenBTN.classList.contains("full__screen__inactive")) {
+         fullScreenBTN.classList.remove("full__screen__inactive");
+         fullScreenAPI.goFullScreen(); 
+      } else{
+         fullScreenBTN.classList.add("full__screen__inactive");
+         fullScreenAPI.cancelFullScreen();
+      }
+   });
 }
 
 

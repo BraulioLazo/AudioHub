@@ -24,6 +24,7 @@ body.no-scroll {
 main {
   display: flex;
   width: 100%;
+  background-color: var(--background-color);
 }
 
 .audiohub__btn {
@@ -538,6 +539,8 @@ main input {
 .audiohub__section__configuration .audiohub__section__configuration__container .configuration__option .configuration__option__buttons__container .button__switch {
   width: 40px;
   height: 20px;
+  border: none;
+  outline: none;
   border-radius: 50px;
   background-color: var(--background-color);
   box-shadow: var(--shadow-both);
