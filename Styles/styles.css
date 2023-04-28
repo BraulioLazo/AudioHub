@@ -537,15 +537,22 @@ main input {
 }
 .audiohub__section__configuration .audiohub__section__configuration__container .configuration__option .configuration__option__buttons__container .button__switch {
   width: 40px;
-  height: 15px;
+  height: 20px;
+  border-radius: 50px;
+  background-color: var(--background-color);
+  box-shadow: var(--shadow-both);
+}
+.audiohub__section__configuration .audiohub__section__configuration__container .configuration__option .configuration__option__buttons__container .button__switch div.move__switch {
+  width: 100%;
 }
 .audiohub__section__configuration .audiohub__section__configuration__container .configuration__option .configuration__option__buttons__container .button__switch .switch {
   position: relative;
   display: flex;
   align-items: center;
-  width: 0;
+  cursor: pointer;
+  width: 0%;
   height: 100%;
-  border: 1px solid red;
+  background-image: -webkit-linear-gradient(left, transparent, var(--main-color-three-quater));
   transition: width 0.3s ease;
 }
 .audiohub__section__configuration .audiohub__section__configuration__container .configuration__option .configuration__option__buttons__container .button__switch .switch .switch__thumb {

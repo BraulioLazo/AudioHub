@@ -442,9 +442,7 @@ main {
 
             .configuration__option__buttons__container {
 
-
                 .configuration__button {
-
                     border-radius: 50px;
                     font-size: 14px;
                     border: none;
@@ -455,15 +453,23 @@ main {
 
                 .button__switch {
                     width: 40px;
-                    height: 15px;
+                    height: 20px;
+                    border-radius: 50px;
+                    background-color: var(--background-color);
+                    box-shadow: var(--shadow-both);
+
+                    div.move__switch {
+                        width: 100%;
+                    }
 
                     .switch {
                         position: relative;
                         display: flex;
                         align-items: center;
-                        width: 0;
+                        cursor: pointer;
+                        width: 0%;
                         height: 100%;
-                        border: 1px solid red;
+                        background-image: -webkit-linear-gradient(left, transparent, var(--main-color-three-quater));
                         transition: width .3s ease;
 
                         .switch__thumb {
@@ -473,8 +479,12 @@ main {
                             height: 25px;
                             border-radius: 50%;
                             background-color: var(--background-color);
+
                         }
                     }
+
+
+
                 }
 
                 button#reset__database__btn {
