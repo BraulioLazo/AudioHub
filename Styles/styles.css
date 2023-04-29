@@ -423,6 +423,7 @@ main input {
 }
 .audiohub__section__audioplayer .audiohub__section__audioplayer__container .audiohub__audioplayer .audioplayer__img__container img {
   width: 100%;
+  margin-bottom: -4px;
   border-radius: 50%;
 }
 .audiohub__section__audioplayer .audiohub__section__audioplayer__container .audiohub__audioplayer .audioplayer__container__description {
@@ -474,7 +475,7 @@ main input {
   width: 60px;
   height: 60px;
   padding: 10px;
-  border-radius: 50%;
+  border-radius: 50px;
   border: none;
   outline: none;
   background-color: var(--background-color);
@@ -497,6 +498,9 @@ main input {
 .audiohub__section__audioplayer .audiohub__section__audioplayer__container .audiohub__audioplayer #audioplayer__buttons__container #btn__pause {
   width: 50px;
   height: 50px;
+}
+.audiohub__section__audioplayer .audiohub__section__audioplayer__container .audiohub__audioplayer #audioplayer__buttons__container #btn__play {
+  border-radius: 50%;
 }
 
 .audiohub__section__configuration {

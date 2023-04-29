@@ -108,15 +108,15 @@
         <form id="form__addtrack">
           <p>Por favor, ingrese los siguientes datos para agregar una nueva pista de audio:</p>
           <label for="input__track__name"></label>
-          <input type="text" id="input__track__name" placeholder="Titulo de Pista"> <br>
+          <input type="text" id="input__track__name" placeholder="Titulo de Pista" required> <br>
 
           <label for="input__track__artist"></label>
-          <input type="text" id="input__track__artist" placeholder="Nombre de Artista"> <br>
+          <input type="text" id="input__track__artist" placeholder="Nombre de Artista" required> <br>
 
           <label for="input__add__track"></label>
-          <input type="file" id="input__add__track" accept="audio/mp3"> <br>
+          <input type="file" id="input__add__track" accept="audio/mp3" required> <br>
 
-          <button type="button" id="form__addtrack__btn__submit"> Guardar Pista</button>
+          <button type="submit" id="form__addtrack__btn__submit"> Guardar Pista</button>
         </form>
       </div>
 
@@ -225,25 +225,6 @@
           </div>
         </div>
 
-        <div class="configuration__option">
-          <div class="configuration__option__info">
-            <h4>Pantalla Completa</h4>
-            <p class="option__description">
-              Al activar esta opción la aplicación ocupara la pantalla completa(Esta opción debe activarse 
-              cada vez que se inicia el programa).
-            </p>
-          </div>
-
-          <div class="configuration__option__buttons__container">
-
-            <button class="button__switch full__screen__inactive" id="full__screen__btn">
-              <div class="switch">
-                <span class="switch__thumb"></span>
-              </div>
-            </button>
-            
-          </div>
-        </div>
       </div>
     </section>
 
@@ -268,7 +249,6 @@
   <script src="JavaScript/deploy-elements.js"></script>
   <script src="JavaScript/tracksDB.js"></script>
   <script src="JavaScript/audioPlayer.js"></script>
-  <script src="JavaScript/Full-Screen-API.js"></script>
   <script src="JavaScript/main.js"></script>
 </body>
 

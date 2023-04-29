@@ -7,8 +7,9 @@ const databaseManager = {
     initDatabase: () => {
         databaseManager.tracksContainer = document.querySelector(".tracks__container");
 
-        const btnADDtrack = document.querySelector("#form__addtrack__btn__submit");
-        btnADDtrack.addEventListener("click", () => {
+        const formADDtrack = document.querySelector("#form__addtrack");
+        formADDtrack.addEventListener("submit", (event) => {
+            event.preventDefault();
             databaseManager.addTrack();
             const sectionADDtrack = document.querySelector(".audiohub__section__addtrack");
             deploySection(sectionADDtrack);
