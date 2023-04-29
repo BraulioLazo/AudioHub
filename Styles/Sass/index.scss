@@ -381,10 +381,16 @@ main {
                     background-color: var(--background-color);
                     border: 3px solid var(--background-color);
                     box-shadow: var(--shadow-both);
+                    transform: scale(1);
+                    transition: transform .3s ease;
 
                     img {
                         width: 80%;
                     }
+                }
+
+                .btn__audioplayer__efect {
+                    transform: scale(0.8);
                 }
 
                 #btn__previous__track,

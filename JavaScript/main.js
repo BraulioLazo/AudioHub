@@ -21,6 +21,16 @@ function startAudioHub() {
       const sectionConfiguration = document.querySelector(".audiohub__section__configuration");
       deploySection(sectionConfiguration);
    };
+
+   const audioplayerBTN = document.querySelectorAll(".btn__audioPlayer");
+   audioplayerBTN.forEach((element) => {
+      element.addEventListener("click", () => {
+         element.classList.add("btn__audioplayer__efect");
+         setTimeout(() => {
+            element.classList.remove("btn__audioplayer__efect");
+         }, 300);
+      });
+   });
 }
 
 

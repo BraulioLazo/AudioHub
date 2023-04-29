@@ -485,9 +485,14 @@ main input {
   background-color: var(--background-color);
   border: 3px solid var(--background-color);
   box-shadow: var(--shadow-both);
+  transform: scale(1);
+  transition: transform 0.3s ease;
 }
 .audiohub__section__audioplayer .audiohub__section__audioplayer__container .audiohub__audioplayer #audioplayer__buttons__container .btn__audioPlayer img {
   width: 80%;
+}
+.audiohub__section__audioplayer .audiohub__section__audioplayer__container .audiohub__audioplayer #audioplayer__buttons__container .btn__audioplayer__efect {
+  transform: scale(0.8);
 }
 .audiohub__section__audioplayer .audiohub__section__audioplayer__container .audiohub__audioplayer #audioplayer__buttons__container #btn__previous__track,
 .audiohub__section__audioplayer .audiohub__section__audioplayer__container .audiohub__audioplayer #audioplayer__buttons__container #btn__next__track {
