@@ -208,7 +208,7 @@ main input {
   flex-wrap: wrap;
   gap: 20px;
   width: 100%;
-  padding-bottom: 80px;
+  padding-bottom: 50px;
 }
 .audiohub__section__music .audiohub__section__music__container .tracks__container .track {
   max-width: 400px;
