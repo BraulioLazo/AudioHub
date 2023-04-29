@@ -669,5 +669,10 @@ main input {
     width: 100%;
   }
 }
+@media screen and (max-width: 600px) {
+  .audiohub__section__music .audiohub__section__music__container .tracks__container .track {
+    max-width: 600px;
+  }
+}
 
 /*# sourceMappingURL=styles.css.map */
