@@ -31,6 +31,14 @@ function startAudioHub() {
          }, 300);
       });
    });
+
+   document.querySelector("#full__screen__btn").onclick = ()=>{
+      if(!fullScreenAPI.isFullScreenEnable){
+         fullScreenAPI.fullScreenCompatibility();
+      } else {
+         fullScreenAPI.cancelFullScreen();
+      }
+   }
 }
 
 

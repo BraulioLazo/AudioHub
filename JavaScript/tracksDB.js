@@ -136,6 +136,14 @@ const databaseManager = {
             const audioData = new Blob([result.audio], { type: 'audio/mpeg' });
             const audioURL = URL.createObjectURL(audioData);
             const audioPlayer = document.querySelector("#audioPlayer");
+
+            console.log(performance.memory);
+            if (audioPlayer.src) {
+                URL.revokeObjectURL(audioPlayer.src);
+                console.log(performance.memory);
+
+            }
+
             audioPlayer.setAttribute("src", audioURL);
 
             audioPlayer.addEventListener("error", (event) => {
@@ -186,9 +194,6 @@ const databaseManager = {
             customConfirm.style.display = "none";
         };
     }
-
-
-}
-
+};
 
 

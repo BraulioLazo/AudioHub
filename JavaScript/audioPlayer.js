@@ -55,40 +55,60 @@ const audioPlayerManager = {
     playNextTrack: () => {
         const transaction = databaseManager.DB.transaction([databaseManager.trackStorageName]);
         const storage = transaction.objectStore(databaseManager.trackStorageName);
-        const countRequest = storage.count();
+        const request = storage.getAllKeys();
 
-        countRequest.onsuccess = () => {
-            const totalTracks = countRequest.result;
-            let nextTrackKey = audioPlayerManager.currentTrackKey + 1;
+        request.onsuccess = () => {
+            const trackKeys = request.result;
+            console.log(trackKeys)
 
-            if (nextTrackKey > totalTracks) {
-                nextTrackKey = 1;
+
+            if (!trackKeys.length) {
+                console.log("No hay pistas disponibles.");
+                return;
             }
 
+            let currentTrackIndex = trackKeys.indexOf(audioPlayerManager.currentTrackKey);
+            let nextTrackKey;
+
+            if (currentTrackIndex < 0 || currentTrackIndex === trackKeys.length - 1) {
+                // Si no se encuentra la llave actual, o es la última del arreglo,
+                // se reproduce la primera pista del arreglo
+                nextTrackKey = trackKeys[0];
+            } else {
+                // De lo contrario, se reproduce la siguiente pista en el arreglo
+                nextTrackKey = trackKeys[currentTrackIndex + 1];
+            }
             databaseManager.playTrack(nextTrackKey, () => {
                 audioPlayerManager.play();
             });
-        };
+        }; 
     },
 
     playPreviousTrack: () => {
         const transaction = databaseManager.DB.transaction([databaseManager.trackStorageName]);
         const storage = transaction.objectStore(databaseManager.trackStorageName);
-        const countRequest = storage.count();
-
-        countRequest.onsuccess = () => {
-            const totalTracks = countRequest.result;
-            let previousTrackKey = audioPlayerManager.currentTrackKey - 1;
-
-            if (previousTrackKey < 1) {
-                previousTrackKey = totalTracks;
-            }
-
-            databaseManager.playTrack(previousTrackKey, () => {
-                audioPlayerManager.play();
-            });
+        const getAllKeysRequest = storage.getAllKeys();
+      
+        getAllKeysRequest.onsuccess = () => {
+          const trackKeys = getAllKeysRequest.result;
+          const currentTrackIndex = trackKeys.indexOf(audioPlayerManager.currentTrackKey);
+          let previousTrackKey = null;
+      
+          if (currentTrackIndex <= 0) {
+            // Si no se encuentra la llave actual, o es la primera del arreglo,
+            // se reproduce la última pista del arreglo
+            previousTrackKey = trackKeys[trackKeys.length - 1];
+          } else {
+            // De lo contrario, se reproduce la pista anterior en el arreglo
+            previousTrackKey = trackKeys[currentTrackIndex - 1];
+          }
+      
+          databaseManager.playTrack(previousTrackKey, () => {
+            audioPlayerManager.play();
+          });
         };
-    },
+      }
+      ,
 
     init: () => {
         audioPlayerManager.playButton.addEventListener("click", () => {
