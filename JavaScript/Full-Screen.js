@@ -60,4 +60,18 @@ const fullScreenAPI = {
             console.error("Error al salir de pantalla completa");
         }
     },
+
+    handleFullScreenChange: () => {
+        if (document.fullscreenElement) {
+            document.body.classList.add("fullscreen-scroll");
+
+        } else {
+            document.body.classList.remove("fullscreen-scroll");
+
+            const fullScreenSwitch = document.querySelector(".full__screen__switch");
+            fullScreenSwitch.classList.remove("move__switch");
+
+            fullScreenAPI.isFullScreenEnable = false;
+        }
+    }
 };

@@ -2,6 +2,7 @@ function startAudioHub() {
 
    databaseManager.initDatabase();
 
+
    document.querySelector("#add__track").onclick = () => {
       const sectionADDtrack = document.querySelector(".audiohub__section__addtrack");
       deploySection(sectionADDtrack);
@@ -32,13 +33,15 @@ function startAudioHub() {
       });
    });
 
-   document.querySelector("#full__screen__btn").onclick = ()=>{
-      if(!fullScreenAPI.isFullScreenEnable){
+   document.querySelector("#full__screen__btn").onclick = () => {
+      if (!fullScreenAPI.isFullScreenEnable) {
          fullScreenAPI.fullScreenCompatibility();
       } else {
          fullScreenAPI.cancelFullScreen();
       }
-   }
+   };
+
+   document.addEventListener("fullscreenchange", fullScreenAPI.handleFullScreenChange);
 }
 
 

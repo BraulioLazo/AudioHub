@@ -21,6 +21,14 @@ body.no-scroll {
   height: 100%;
 }
 
+:fullscreen body {
+  overflow: auto;
+}
+
+.fullscreen-scroll {
+  overflow: auto !important;
+}
+
 main {
   display: flex;
   width: 100%;
