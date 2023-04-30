@@ -62,14 +62,16 @@ const fullScreenAPI = {
     },
 
     handleFullScreenChange: () => {
+
         if (document.fullscreenElement) {
             document.body.classList.add("fullscreen-scroll");
+            document.querySelector(".full__screen__switch").classList.add("move__switch");
+            
+            fullScreenAPI.isFullScreenEnable = true;
 
         } else {
             document.body.classList.remove("fullscreen-scroll");
-
-            const fullScreenSwitch = document.querySelector(".full__screen__switch");
-            fullScreenSwitch.classList.remove("move__switch");
+            document.querySelector(".full__screen__switch").classList.remove("move__switch");
 
             fullScreenAPI.isFullScreenEnable = false;
         }

@@ -14,6 +14,7 @@ body {
   width: 100%;
   min-height: 100vh;
   background-color: var(--background-color);
+  overflow: hidden;
 }
 
 body.no-scroll {
@@ -27,6 +28,10 @@ body.no-scroll {
 
 .fullscreen-scroll {
   overflow: auto !important;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 main {
@@ -192,7 +197,6 @@ main input {
 .audiohub__section__music {
   position: relative;
   width: 100%;
-  padding: 40px 30px 50px 30px;
   background-image: -webkit-linear-gradient(right, var(--shadow-dark), transparent);
 }
 .audiohub__section__music .gradient__container {
@@ -206,8 +210,10 @@ main input {
 }
 .audiohub__section__music .audiohub__section__music__container {
   position: relative;
-  padding-top: 70px;
-  padding-bottom: 20px;
+  max-height: 100vh;
+  overflow-y: auto;
+  padding-top: 100px;
+  padding-bottom: 60px;
   z-index: 2;
 }
 .audiohub__section__music .audiohub__section__music__container .tracks__container {
