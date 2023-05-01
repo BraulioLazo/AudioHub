@@ -1,3 +1,13 @@
+@media screen and (max-width: 1024px) {
+
+    #audiohub__section__audioplayer.minimize__audioplayer {
+        #track__progressbar__container {
+            display: none;
+        }
+    }
+
+}
+
 @media screen and (max-width: 900px) {
     header {
         position: absolute;
@@ -44,18 +54,33 @@
 
         }
     }
+
+    #audiohub__section__audioplayer.minimize__audioplayer {
+        bottom: 100px;
+    }
 }
 
 @media screen and (max-width: 600px) {
-    .audiohub__section__music{
+    .audiohub__section__music {
         .audiohub__section__music__container {
 
             .tracks__container {
-    
+
                 .track {
                     max-width: 600px;
                 }
             }
         }
     }
+
+    #audiohub__section__audioplayer.minimize__audioplayer {
+        #audioplayer__buttons__container {
+
+            #btn__previous__track,
+            #btn__next__track {
+                display: none;
+            }
+        }
+    }
+
 }

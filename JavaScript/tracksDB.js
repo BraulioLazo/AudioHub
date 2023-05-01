@@ -101,7 +101,11 @@ const databaseManager = {
 
                 trackDiv.addEventListener("click", () => {
                     const section = document.querySelector("#audiohub__section__audioplayer");
-                    deploySection(section);
+
+                    if (!section.classList.contains("minimize__audioplayer")) {
+                        deploySection(section);
+                    }
+                    
                     databaseManager.playTrack(trackKey);
                 });
 

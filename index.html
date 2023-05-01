@@ -143,33 +143,43 @@
 
     </section>
 
-    <section id="audiohub__section__audioplayer" class="audiohub__section__audioplayer ">
-      <div class="audiohub__section__audioplayer__container">
+    <section id="audiohub__section__audioplayer" class="audiohub__section__audioplayer audioplayer__child">
+      <div class="audiohub__section__audioplayer__container audioplayer__child">
 
-        <div class="audiohub__audioplayer">
+        <div class="collapse__audioplayer__container">
+          <button id="collapse__audioplayer">
+            <img src="Images/back__icon.png" alt="">
+            Atrás
+          </button>
+        </div>
 
-          <div class="audioplayer__img__container">
-            <img src="assets/music/pista-images/audio__image__one.jpg" alt="">
+        <div class="audiohub__audioplayer audioplayer__child">
+
+
+          <div class="track__info__container audioplayer__child">
+            <div class="audioplayer__img__container audioplayer__child">
+              <img src="assets/music/pista-images/audio__image__one.jpg" alt="">
+            </div>
+  
+            <div class="audioplayer__container__description audioplayer__child">
+              <h3 id="h3__track__name" class="audioplayer__child">
+                Nombre Pista
+              </h3>
+              <h4 id="h4__artist__name" class="audioplayer__child">
+                Nombre Artista
+              </h4>
+            </div>
           </div>
 
           <audio id="audioPlayer"></audio>
 
-          <div class="audioplayer__container__description">
-            <h3 id="h3__track__name">
-              Nombre Pista
-            </h3>
-            <h4 id="h4__artist__name">
-              Nombre Artista
-            </h4>
-          </div>
-
-          <div id="track__progressbar__container">
-            <div class="duration__container">
-              <p id="currentTime">0:00</p>
-              <p id="totalDuration">0:00</p>
+          <div id="track__progressbar__container" class="audioplayer__child">
+            <div class="duration__container audioplayer__child">
+              <p id="currentTime" class="audioplayer__child">0:00</p>
+              <p id="totalDuration" class="audioplayer__child">0:00</p>
             </div>
 
-            <div class="duration__progressbar">
+            <div class="duration__progressbar audioplayer__child">
               <div class="progress"></div>
             </div>
           </div>
@@ -229,7 +239,7 @@
           <div class="configuration__option__info">
             <h4>Pantalla Completa</h4>
             <p class="option__description">
-              Al activar esta opción la aplicación ocupará la pantalla completa (Esta opción debe activarse 
+              Al activar esta opción la aplicación ocupará la pantalla completa (Esta opción debe activarse
               cada vez que se inicia el programa).
             </p>
           </div>

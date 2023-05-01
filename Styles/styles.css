@@ -424,6 +424,31 @@ main input {
   height: 0;
   overflow: hidden;
 }
+.audiohub__section__audioplayer .audiohub__section__audioplayer__container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.audiohub__section__audioplayer .audiohub__section__audioplayer__container .collapse__audioplayer__container {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+.audiohub__section__audioplayer .audiohub__section__audioplayer__container .collapse__audioplayer__container button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: 18px;
+}
+.audiohub__section__audioplayer .audiohub__section__audioplayer__container .collapse__audioplayer__container button img {
+  width: 30px;
+}
 .audiohub__section__audioplayer .audiohub__section__audioplayer__container .audiohub__audioplayer {
   display: flex;
   justify-content: center;
@@ -431,26 +456,33 @@ main input {
   gap: 20px;
   max-width: 600px;
 }
-.audiohub__section__audioplayer .audiohub__section__audioplayer__container .audiohub__audioplayer .audioplayer__img__container {
+.audiohub__section__audioplayer .audiohub__section__audioplayer__container .audiohub__audioplayer .track__info__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.audiohub__section__audioplayer .audiohub__section__audioplayer__container .audiohub__audioplayer .track__info__container .audioplayer__img__container {
   width: 100%;
   border-radius: 50%;
   border: 10px solid var(--background-color);
   box-shadow: var(--shadow-container);
 }
-.audiohub__section__audioplayer .audiohub__section__audioplayer__container .audiohub__audioplayer .audioplayer__img__container img {
+.audiohub__section__audioplayer .audiohub__section__audioplayer__container .audiohub__audioplayer .track__info__container .audioplayer__img__container img {
   width: 100%;
   margin-bottom: -4px;
   border-radius: 50%;
 }
-.audiohub__section__audioplayer .audiohub__section__audioplayer__container .audiohub__audioplayer .audioplayer__container__description {
+.audiohub__section__audioplayer .audiohub__section__audioplayer__container .audiohub__audioplayer .track__info__container .audioplayer__container__description {
   width: 100%;
   text-align: center;
   font-style: italic;
 }
-.audiohub__section__audioplayer .audiohub__section__audioplayer__container .audiohub__audioplayer .audioplayer__container__description h3 {
+.audiohub__section__audioplayer .audiohub__section__audioplayer__container .audiohub__audioplayer .track__info__container .audioplayer__container__description h3 {
   font-size: 18px;
 }
-.audiohub__section__audioplayer .audiohub__section__audioplayer__container .audiohub__audioplayer .audioplayer__container__description h4 {
+.audiohub__section__audioplayer .audiohub__section__audioplayer__container .audiohub__audioplayer .track__info__container .audioplayer__container__description h4 {
   font-size: 14px;
 }
 .audiohub__section__audioplayer .audiohub__section__audioplayer__container .audiohub__audioplayer #track__progressbar__container {
@@ -522,6 +554,51 @@ main input {
 }
 .audiohub__section__audioplayer .audiohub__section__audioplayer__container .audiohub__audioplayer #audioplayer__buttons__container #btn__play {
   border-radius: 50%;
+}
+
+#audiohub__section__audioplayer.minimize__audioplayer {
+  position: fixed;
+  top: auto;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  height: 120px;
+  width: 100%;
+  padding: 12px;
+  z-index: 1000;
+}
+#audiohub__section__audioplayer.minimize__audioplayer .collapse__audioplayer__container {
+  display: none;
+}
+#audiohub__section__audioplayer.minimize__audioplayer .audiohub__audioplayer {
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  max-width: none;
+  width: 1200px;
+  height: 100%;
+}
+#audiohub__section__audioplayer.minimize__audioplayer .audiohub__audioplayer .track__info__container {
+  flex-wrap: nowrap;
+}
+#audiohub__section__audioplayer.minimize__audioplayer .audiohub__audioplayer .track__info__container .audioplayer__img__container {
+  width: 130px;
+  border-radius: 50%;
+  border: 5px solid var(--background-color);
+  box-shadow: var(--shadow-outside);
+}
+#audiohub__section__audioplayer.minimize__audioplayer .audiohub__audioplayer .track__info__container .audioplayer__img__container img {
+  height: 100%;
+  margin-bottom: -4px;
+  border-radius: 50%;
+}
+#audiohub__section__audioplayer.minimize__audioplayer .audiohub__audioplayer #track__progressbar__container {
+  max-width: 400px;
+}
+#audiohub__section__audioplayer.minimize__audioplayer .audiohub__audioplayer #track__progressbar__container .duration__progressbar {
+  background-color: var(--background-color);
+  box-shadow: var(--shadow-both);
 }
 
 .audiohub__section__configuration {
@@ -645,6 +722,11 @@ main input {
   background-image: -webkit-linear-gradient(left, var(--main-color-three-quater), transparent);
 }
 
+@media screen and (max-width: 1024px) {
+  #audiohub__section__audioplayer.minimize__audioplayer #track__progressbar__container {
+    display: none;
+  }
+}
 @media screen and (max-width: 900px) {
   header {
     position: absolute;
@@ -685,10 +767,17 @@ main input {
   .audiohub__side__section__menu button span {
     width: 100%;
   }
+  #audiohub__section__audioplayer.minimize__audioplayer {
+    bottom: 100px;
+  }
 }
 @media screen and (max-width: 600px) {
   .audiohub__section__music .audiohub__section__music__container .tracks__container .track {
     max-width: 600px;
+  }
+  #audiohub__section__audioplayer.minimize__audioplayer #audioplayer__buttons__container #btn__previous__track,
+  #audiohub__section__audioplayer.minimize__audioplayer #audioplayer__buttons__container #btn__next__track {
+    display: none;
   }
 }
 
