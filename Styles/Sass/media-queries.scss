@@ -80,6 +80,23 @@
             #btn__next__track {
                 display: none;
             }
+
+            #btn__play{
+                width: 40px;
+                height: 40px;
+                padding: 6px;
+            }
+
+            #btn__stop,
+            #btn__pause{
+                width: 30px;
+                height: 30px;
+                padding: 6px;
+
+                img{
+                    width: 80%;
+                }
+            }
         }
     }
 

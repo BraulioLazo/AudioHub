@@ -780,6 +780,21 @@ main input {
   #audiohub__section__audioplayer.minimize__audioplayer #audioplayer__buttons__container #btn__next__track {
     display: none;
   }
+  #audiohub__section__audioplayer.minimize__audioplayer #audioplayer__buttons__container #btn__play {
+    width: 40px;
+    height: 40px;
+    padding: 6px;
+  }
+  #audiohub__section__audioplayer.minimize__audioplayer #audioplayer__buttons__container #btn__stop,
+  #audiohub__section__audioplayer.minimize__audioplayer #audioplayer__buttons__container #btn__pause {
+    width: 30px;
+    height: 30px;
+    padding: 6px;
+  }
+  #audiohub__section__audioplayer.minimize__audioplayer #audioplayer__buttons__container #btn__stop img,
+  #audiohub__section__audioplayer.minimize__audioplayer #audioplayer__buttons__container #btn__pause img {
+    width: 80%;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
