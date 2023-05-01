@@ -293,9 +293,10 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 0;
-    height: 0;
+    width: 0%;
+    height: 0%;
     overflow: hidden;
+    transition: all 0.3s ease-in-out;
 
     .audiohub__section__audioplayer__container {
         position: relative;
@@ -464,7 +465,7 @@ main {
     height: 120px;
     width: 100%;
     padding: 12px;
-    z-index: 1000;
+    z-index: 998;
 
     .collapse__audioplayer__container {
         display: none;
